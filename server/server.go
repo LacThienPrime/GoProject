@@ -3,7 +3,6 @@ package server
 import (
 	"context"
 	"fmt"
-	"main/config"
 	"net"
 	"net/http"
 
@@ -38,12 +37,4 @@ func StartServer(ctx context.Context, addr string, port int) {
 	if err := server.Close(); err != nil {
 		log.Errorf("Shutdown failed (%s)", err)
 	}
-}
-
-func registerRoutes(router *gin.Engine, config *config.Configuration) {
-
-}
-
-func registerWebAppRoutes(router *gin.Engine, config *config.Configuration) {
-
 }
