@@ -1,6 +1,7 @@
 package server
 
 import (
+	"main/api"
 	"main/config"
 
 	"github.com/gin-gonic/gin"
@@ -14,4 +15,5 @@ var (
 func registerRoutes(router *gin.Engine, config *config.Configuration) {
 	router.RedirectTrailingSlash = true
 
+	api.CreateSession(APIv1)
 }

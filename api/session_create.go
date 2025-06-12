@@ -1,9 +1,12 @@
 package api
 
-import "github.com/gin-gonic/gin"
+import (
+	"main/config"
+
+	"github.com/gin-gonic/gin"
+)
 
 func CreateSession(router *gin.RouterGroup) {
-	CreateSessionHandler := func(c *gin.Context)  {
-		response := 
-	}
+	var config *config.Config
+	config.ClientSession()
 }

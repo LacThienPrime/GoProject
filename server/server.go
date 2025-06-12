@@ -3,6 +3,7 @@ package server
 import (
 	"context"
 	"fmt"
+	"main/config"
 	"net"
 	"net/http"
 
@@ -13,6 +14,10 @@ import (
 func StartServer(ctx context.Context, addr string, port int) {
 	router := gin.New()
 	router.Use(gin.Recovery())
+
+	var config *config.Configuration
+
+	registerRoutes(router, config)
 
 	server := &http.Server{
 		Handler: router,
